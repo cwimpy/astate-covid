@@ -25,7 +25,8 @@ astate$Type <- recode_factor(astate$Type, `Students LivingOn-Campus` = "On-Campu
                 `Students LivingOff-Campus` = "Off-Campus Students")
 
 total_cases <- astate %>% 
-  tally(Number)
+  tally(Number) 
+total_cases
 
 bar <- astate %>% 
   ggplot(aes(reorder(Type, Number), Number)) +
@@ -63,7 +64,7 @@ astate_cum <- astate_cum %>%
 astate_cum %>% 
   slice_tail(n = 4)
 
-write_csv(astate, "data/astate_cum.csv")
+write_csv(astate_cum, "data/astate-cum.csv")
 
 astate_cum <- astate_cum %>% 
   group_by(Type) %>% 
