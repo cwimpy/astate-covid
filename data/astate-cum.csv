@@ -1,101 +1,109 @@
 Date,Type,Number
-20200825,On-Campus Students,3
-20200825,Off-Campus Students,19
-20200825,Employees,4
-20200825,Vendors/Contractors,1
-20200826,On-Campus Students,3
-20200826,Off-Campus Students,20
-20200826,Employees,3
-20200826,Vendors/Contractors,1
-20200827,On-Campus Students,4
-20200827,Off-Campus Students,20
-20200827,Employees,2
-20200827,Vendors/Contractors,2
-20200828,On-Campus Students,5
-20200828,Off-Campus Students,26
-20200828,Employees,1
-20200828,Vendors/Contractors,2
-20200829,On-Campus Students,5
-20200829,Off-Campus Students,26
-20200829,Employees,1
-20200829,Vendors/Contractors,2
-20200830,On-Campus Students,5
-20200830,Off-Campus Students,26
-20200830,Employees,1
-20200830,Vendors/Contractors,2
-20200831,On-Campus Students,12
-20200831,Off-Campus Students,36
-20200831,Employees,1
-20200831,Vendors/Contractors,0
-20200901,On-Campus Students,10
-20200901,Off-Campus Students,45
-20200901,Employees,0
-20200901,Vendors/Contractors,1
-20200902,On-Campus Students,26
-20200902,Off-Campus Students,61
-20200902,Employees,1
-20200902,Vendors/Contractors,1
-20200903,On-Campus Students,30
-20200903,Off-Campus Students,78
-20200903,Employees,3
-20200903,Vendors/Contractors,1
-20200904,On-Campus Students,27
-20200904,Off-Campus Students,106
-20200904,Employees,3
-20200904,Vendors/Contractors,1
-20200905,On-Campus Students,27
-20200905,Off-Campus Students,106
-20200905,Employees,3
-20200905,Vendors/Contractors,1
-20200906,On-Campus Students,27
-20200906,Off-Campus Students,106
-20200906,Employees,3
-20200906,Vendors/Contractors,1
-20200907,On-Campus Students,27
-20200907,Off-Campus Students,106
-20200907,Employees,3
-20200907,Vendors/Contractors,1
-20200908,On-Campus Students,27
-20200908,Off-Campus Students,78
-20200908,Employees,5
-20200908,Vendors/Contractors,0
-20200909,On-Campus Students,34
-20200909,Off-Campus Students,94
-20200909,Employees,8
-20200909,Vendors/Contractors,0
-20200910,On-Campus Students,45
-20200910,Off-Campus Students,118
-20200910,Employees,9
-20200910,Vendors/Contractors,0
-20200911,On-Campus Students,54
-20200911,Off-Campus Students,124
-20200911,Employees,9
-20200911,Vendors/Contractors,0
-20200912,On-Campus Students,54
-20200912,Off-Campus Students,124
-20200912,Employees,9
-20200912,Vendors/Contractors,0
-20200913,On-Campus Students,54
-20200913,Off-Campus Students,124
-20200913,Employees,9
-20200913,Vendors/Contractors,0
-20200914,On-Campus Students,53
-20200914,Off-Campus Students,125
-20200914,Employees,9
-20200914,Vendors/Contractors,0
-20200915,On-Campus Students,46
-20200915,Off-Campus Students,125
-20200915,Employees,9
-20200915,Vendors/Contractors,0
-20200916,On-Campus Students,37
-20200916,Off-Campus Students,89
-20200916,Employees,9
-20200916,Vendors/Contractors,0
-20200917,On-Campus Students,43
-20200917,Off-Campus Students,97
-20200917,Employees,6
-20200917,Vendors/Contractors,0
-20200918,On-Campus Students,43
-20200918,Off-Campus Students,97
-20200918,Employees,6
-20200918,Vendors/Contractors,0
+2020-08-25,Employees,4
+2020-08-25,Off-Campus Students,19
+2020-08-25,On-Campus Students,3
+2020-08-25,Vendors/Contractors,1
+2020-08-26,Employees,3
+2020-08-26,Off-Campus Students,20
+2020-08-26,On-Campus Students,3
+2020-08-26,Vendors/Contractors,1
+2020-08-27,Employees,2
+2020-08-27,Off-Campus Students,20
+2020-08-27,On-Campus Students,4
+2020-08-27,Vendors/Contractors,2
+2020-08-28,Employees,1
+2020-08-28,Off-Campus Students,26
+2020-08-28,On-Campus Students,5
+2020-08-28,Vendors/Contractors,2
+2020-08-29,Employees,1
+2020-08-29,Off-Campus Students,26
+2020-08-29,On-Campus Students,5
+2020-08-29,Vendors/Contractors,2
+2020-08-30,Employees,1
+2020-08-30,Off-Campus Students,26
+2020-08-30,On-Campus Students,5
+2020-08-30,Vendors/Contractors,2
+2020-08-31,Employees,1
+2020-08-31,Off-Campus Students,36
+2020-08-31,On-Campus Students,12
+2020-08-31,Vendors/Contractors,0
+2020-09-01,Employees,0
+2020-09-01,Off-Campus Students,45
+2020-09-01,On-Campus Students,10
+2020-09-01,Vendors/Contractors,1
+2020-09-02,Employees,1
+2020-09-02,Off-Campus Students,61
+2020-09-02,On-Campus Students,26
+2020-09-02,Vendors/Contractors,1
+2020-09-03,Employees,3
+2020-09-03,Off-Campus Students,78
+2020-09-03,On-Campus Students,30
+2020-09-03,Vendors/Contractors,1
+2020-09-04,Employees,3
+2020-09-04,Off-Campus Students,106
+2020-09-04,On-Campus Students,27
+2020-09-04,Vendors/Contractors,1
+2020-09-05,Employees,3
+2020-09-05,Off-Campus Students,106
+2020-09-05,On-Campus Students,27
+2020-09-05,Vendors/Contractors,1
+2020-09-06,Employees,3
+2020-09-06,Off-Campus Students,106
+2020-09-06,On-Campus Students,27
+2020-09-06,Vendors/Contractors,1
+2020-09-07,Employees,3
+2020-09-07,Off-Campus Students,106
+2020-09-07,On-Campus Students,27
+2020-09-07,Vendors/Contractors,1
+2020-09-08,Employees,5
+2020-09-08,Off-Campus Students,78
+2020-09-08,On-Campus Students,27
+2020-09-08,Vendors/Contractors,0
+2020-09-09,Employees,8
+2020-09-09,Off-Campus Students,94
+2020-09-09,On-Campus Students,34
+2020-09-09,Vendors/Contractors,0
+2020-09-10,Employees,9
+2020-09-10,Off-Campus Students,118
+2020-09-10,On-Campus Students,45
+2020-09-10,Vendors/Contractors,0
+2020-09-11,Employees,9
+2020-09-11,Off-Campus Students,124
+2020-09-11,On-Campus Students,54
+2020-09-11,Vendors/Contractors,0
+2020-09-12,Employees,9
+2020-09-12,Off-Campus Students,124
+2020-09-12,On-Campus Students,54
+2020-09-12,Vendors/Contractors,0
+2020-09-13,Employees,9
+2020-09-13,Off-Campus Students,124
+2020-09-13,On-Campus Students,54
+2020-09-13,Vendors/Contractors,0
+2020-09-14,Employees,9
+2020-09-14,Off-Campus Students,125
+2020-09-14,On-Campus Students,53
+2020-09-14,Vendors/Contractors,0
+2020-09-15,Employees,9
+2020-09-15,Off-Campus Students,125
+2020-09-15,On-Campus Students,46
+2020-09-15,Vendors/Contractors,0
+2020-09-16,Employees,9
+2020-09-16,Off-Campus Students,89
+2020-09-16,On-Campus Students,37
+2020-09-16,Vendors/Contractors,0
+2020-09-17,Employees,6
+2020-09-17,Off-Campus Students,97
+2020-09-17,On-Campus Students,43
+2020-09-17,Vendors/Contractors,0
+2020-09-18,Employees,6
+2020-09-18,Off-Campus Students,97
+2020-09-18,On-Campus Students,43
+2020-09-18,Vendors/Contractors,0
+2020-09-21,Employees,16
+2020-09-21,Off-Campus Students,43
+2020-09-21,On-Campus Students,50
+2020-09-21,Vendors/Contractors,2
+2020-09-22,Employees,16
+2020-09-22,Off-Campus Students,47
+2020-09-22,On-Campus Students,44
+2020-09-22,Vendors/Contractors,2
