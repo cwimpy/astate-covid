@@ -4,8 +4,25 @@ library(gganimate)
 library(hrbrthemes)
 library(ggtext)
 library(scales)
+library(rvest)
 
-astate <- read_csv("data/astate.csv")
+page <- read_html("https://www.astate.edu/safety/novel-coronavirus/campus-covid-19-report/")
+
+astate_rona <- page %>% html_table(fill = TRUE)
+
+table <- astate_rona[[1]]
+
+table <- table %>%
+  set_names(table[1, ]) %>%
+  slice(-1)
+
+astate <- table %>% 
+  gather(Type, Number) %>% 
+  dplyr::filter(Type != "Total") %>% 
+  mutate(Number = as.numeric(Number))
+
+astate$Type <- recode_factor(astate$Type, `Students LivingOn-Campus` = "On-Campus Students", 
+                `Students LivingOff-Campus` = "Off-Campus Students")
 
 total_cases <- astate %>% 
   tally(Number)
@@ -28,13 +45,25 @@ bar
 ggsave(filename = "images/bar.png", plot = bar, width = 16, height = 10,
        units = "in", dpi = 300)
 
+write_csv(astate, "data/astate.csv")
 
 ###### Line plots 
 
 astate_cum <- read_csv("data/astate-cum.csv")
 
+astate <- astate %>% 
+  mutate(Date = as.Date(format(Sys.Date()))) 
+
 astate_cum$Date <- lubridate::ymd(astate_cum$Date)
-dplyr::arrange(astate_cum, Type, Date)
+
+astate_cum <- astate_cum %>% 
+  bind_rows(astate) %>% 
+  arrange(Date, Type)
+
+astate_cum %>% 
+  slice_tail(n = 4)
+
+write_csv(astate, "data/astate_cum.csv")
 
 astate_cum <- astate_cum %>% 
   group_by(Type) %>% 
@@ -53,12 +82,10 @@ scale_color_pretty <- function(...){
   discrete_scale("colour","pretty",manual_pal(values = c("#3791FF","#4E4A81","#F6573E", "#37C256")), ...)
 }
 
-
-
 p <- astate_cum %>%
   ggplot() +
   geom_line(aes(x=Date, y=Number, colour = Type), size = 2) +
-  scale_x_date(date_breaks = "3 days", date_labels = "%b %e") +
+  scale_x_date(date_breaks = "5 days", date_labels = "%b %e") +
   scale_y_continuous(trans = "log2",
                      labels = scales::comma_format(accuracy = 1),
                      breaks = 2^c(seq(1, 17, 1)), sec.axis = sec_axis(~ ., breaks = d_ends, labels = comma)) +
@@ -70,20 +97,18 @@ p <- astate_cum %>%
   theme(legend.position="none")
 gg_check(p)
 p
-
 ggsave(filename = "images/astate-cum.png", plot = p, width = 12, height = 8,
        units = "in", dpi = 300)
-
 
 p <- astate_cum %>%
   ggplot() +
   geom_line(aes(x=Date, y=Number, colour = Type), size = 2) +
   geom_point(aes(x=Date, y=Number, colour = Type), size = 3) +
   geom_text(aes(x=Date, y=Number, colour = Type, label = paste0(Type, ": ", Number)), hjust = -0.2, size = 4, fontface = "bold") +
-  scale_x_date(date_breaks = "3 days", date_labels = "%b %e", limits = as.Date(c('2020-08-25','2020-09-24'))) +
+  scale_x_date(date_breaks = "5 days", date_labels = "%b %e", limits = c(min(astate_cum$Date), Sys.Date() + 7)) +
   scale_y_continuous(trans = "log2",
                      labels = scales::comma_format(accuracy = 1),
-                     breaks = 2^c(seq(1, 17, 1))) + #, sec.axis = sec_axis(~ ., breaks = d_ends, labels = comma)) +
+                     breaks = 2^c(seq(1, 17, 1))) + 
   scale_color_pretty() +
   labs(x = "Date (Fall Semester 2020)", y = "Cumulative Number of Reported Cases/Deaths (log2 scale)", subtitle = paste("Updated:", format(Sys.Date(), "%B %e, %Y"), "| Current Total Cases:", total_cases), title = "Total Number of COVID-19 Cases | Arkansas State University",
        caption = "Note: Graph created by Dr. Cameron Wimpy | @camwimpy. Data downloaded from: \nhttps://www.astate.edu/safety/novel-coronavirus/campus-covid-19-report/.",
@@ -95,3 +120,5 @@ gg_check(p)
 
 animate(p, duration = 10, fps = 20, width = 800, height = 600, end_pause = 30, renderer = gifski_renderer())
 anim_save("images/astate-cum.gif")
+
+
