@@ -1,4 +1,8 @@
 Date,Type,Number
+2020-08-24,Employees,3
+2020-08-24,Off-Campus Students,17
+2020-08-24,On-Campus Students,4
+2020-08-24,Vendors/Contractors,1
 2020-08-25,Employees,4
 2020-08-25,Off-Campus Students,19
 2020-08-25,On-Campus Students,3
@@ -115,3 +119,7 @@ Date,Type,Number
 2020-09-24,Off-Campus Students,37
 2020-09-24,On-Campus Students,30
 2020-09-24,Vendors/Contractors,2
+2020-09-25,Employees,9
+2020-09-25,Off-Campus Students,32
+2020-09-25,On-Campus Students,26
+2020-09-25,Vendors/Contractors,2
