@@ -5,6 +5,7 @@ library(hrbrthemes)
 library(ggtext)
 library(scales)
 library(rvest)
+library(viridis)
 
 page <- read_html("https://www.astate.edu/safety/novel-coronavirus/campus-covid-19-report/")
 
@@ -123,3 +124,18 @@ animate(p, duration = 10, fps = 20, width = 800, height = 600, end_pause = 30, r
 anim_save("images/astate-cum.gif")
 
 
+# make area plot
+
+p <- astate_cum %>% 
+  ggplot(aes(x = Date, y = Number, fill = Type)) +
+  geom_area() +
+  labs(x = "Date (Fall Semester 2020)", y = "Cumulative Number of Reported Cases/Deaths (log2 scale)", subtitle = paste("Updated:", format(Sys.Date(), "%B %e, %Y"), "| Current Total Cases:", total_cases), title = "Total Number of COVID-19 Cases | Arkansas State University",
+       caption = "Note: Graph created by Dr. Cameron Wimpy | @camwimpy. Data downloaded from: \nhttps://www.astate.edu/safety/novel-coronavirus/campus-covid-19-report/.",
+       color = "") + 
+  theme_ipsum() +
+  scale_y_continuous(breaks = seq(0,200, by = 25)) +
+  scale_x_date(date_breaks = "5 days", date_labels = "%b %e") +
+  scale_fill_viridis(discrete = TRUE)
+p
+ggsave(filename = "images/astate-cum-area.png", plot = p, width = 12, height = 8,
+       units = "in", dpi = 300)
