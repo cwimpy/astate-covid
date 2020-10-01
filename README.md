@@ -10,4 +10,4 @@ This repo is dedicated to making graphs to track the Covid-19 outbreak at Arkans
 
 ![](images/bar.png)
 
-### Updated: September 30, 2020
+## Updated: September 30, 2020
