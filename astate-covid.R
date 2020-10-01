@@ -107,7 +107,7 @@ p <- astate_cum %>%
   geom_line(aes(x=Date, y=Number, colour = Type), size = 2) +
   geom_point(aes(x=Date, y=Number, colour = Type), size = 3) +
   geom_text(aes(x=Date, y=Number, colour = Type, label = paste0(Type, ": ", Number)), hjust = -0.2, size = 4, fontface = "bold") +
-  scale_x_date(date_breaks = "5 days", date_labels = "%b %e", limits = c(min(astate_cum$Date), Sys.Date() + 8)) +
+  scale_x_date(date_breaks = "5 days", date_labels = "%b %e", limits = c(min(astate_cum$Date), Sys.Date() + 10)) +
   scale_y_continuous(trans = "log2",
                      labels = scales::comma_format(accuracy = 1),
                      breaks = 2^c(seq(1, 17, 1))) + 
