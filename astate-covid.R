@@ -107,7 +107,7 @@ p <- astate_cum %>%
   geom_line(aes(x=Date, y=Number, colour = Type), size = 2) +
   geom_point(aes(x=Date, y=Number, colour = Type), size = 3) +
   geom_text(aes(x=Date, y=Number, colour = Type, label = paste0(Type, ": ", Number)), hjust = -0.2, size = 4, fontface = "bold") +
-  scale_x_date(date_breaks = "5 days", date_labels = "%b %e", limits = c(min(astate_cum$Date), Sys.Date() + 12)) +
+  scale_x_date(date_breaks = "10 days", date_labels = "%b %e", limits = c(min(astate_cum$Date), Sys.Date() + 20)) +
   scale_y_continuous(trans = "log2",
                      labels = scales::comma_format(accuracy = 1),
                      breaks = 2^c(seq(1, 17, 1))) + 
@@ -118,8 +118,7 @@ p <- astate_cum %>%
   theme_ipsum_rc() +
   theme(legend.position="none") +
   transition_reveal(Date)
-gg_check(p)
-
+p
 animate(p, duration = 10, fps = 20, width = 800, height = 600, end_pause = 30, renderer = gifski_renderer())
 anim_save("images/astate-cum.gif")
 
